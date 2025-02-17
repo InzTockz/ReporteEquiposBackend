@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -26,9 +27,9 @@ public class EquipoEntity {
     @Column(name = "serie_equipo")
     private String serieEquipo;
     @Column(name = "fecha_ingreso_equipo")
-    private Date fechaIngresoEquipo;
+    private LocalDate fechaIngresoEquipo;
     @Column(name = "fecha_fabricacion_equipo")
-    private Date fechaFabricacionEquipo;
+    private LocalDate fechaFabricacionEquipo;
 
     @JoinColumn(name = "almacenamiento")
     @ManyToOne()

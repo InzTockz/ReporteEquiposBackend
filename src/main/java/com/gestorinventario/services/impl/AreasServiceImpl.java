@@ -6,6 +6,9 @@ import com.gestorinventario.services.AreasService;
 import java.util.List;
 
 public class AreasServiceImpl implements AreasService {
+
+
+
     @Override
     public List<AreasEntity> listado() {
         return List.of();

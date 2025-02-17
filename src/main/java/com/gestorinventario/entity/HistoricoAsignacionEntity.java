@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -33,7 +35,7 @@ public class HistoricoAsignacionEntity {
     private String detalleHistorico;
 
     @Column(name = "fecha_historico")
-    private Date fechaHistorico;
+    private LocalDate fechaHistorico;
 
     @Column(name = "estado_historico")
     private boolean estadoHistorico;

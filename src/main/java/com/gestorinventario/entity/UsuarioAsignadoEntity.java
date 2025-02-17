@@ -29,8 +29,4 @@ public class UsuarioAsignadoEntity {
     @JoinColumn(name = "area")
     @ManyToOne()
     private AreasEntity areasEntity;
-
-    @JoinColumn(name = "marca")
-    @ManyToOne()
-    private MarcaEntity marcaEntity;
 }

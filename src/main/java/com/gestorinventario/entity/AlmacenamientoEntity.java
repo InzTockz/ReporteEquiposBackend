@@ -17,7 +17,7 @@ public class AlmacenamientoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_almacenamiento")
-    private int id_almacenamiento;
+    private int idAlmacenamiento;
 
     @Column(name = "capacidad_almacenamiento")
     private String capacidadAlmacenamiento;

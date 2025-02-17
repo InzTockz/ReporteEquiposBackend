@@ -6,10 +6,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
-@Table(name = "tbl_historicos_equipo")
+@Table(name = "tbl_historico_equipos")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,5 +26,5 @@ public class HistoricoEquiposEntity {
     private String observacionEquipos;
 
     @Column(name = "fecha_historico_equipos")
-    private Date fechaHistoricoEquipos;
+    private LocalDate fechaHistoricoEquipos;
 }
