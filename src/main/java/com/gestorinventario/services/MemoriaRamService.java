@@ -1,13 +1,13 @@
 package com.gestorinventario.services;
 
-import com.gestorinventario.entity.MemoriaRamEntity;
+import com.gestorinventario.dto.MemoriaRamDto;
 
 import java.util.List;
 
 public interface MemoriaRamService {
 
-    List<MemoriaRamEntity> listado();
-    MemoriaRamEntity registrar(MemoriaRamEntity memoriaRamEntity);
-    MemoriaRamEntity modificar(int idMemoriaRam, MemoriaRamEntity memoriaRamEntity);
-    void eliminar(int idMemoriaRam);
+    List<MemoriaRamDto> listado();
+    MemoriaRamDto registrar(MemoriaRamDto memoriaRamDto);
+    MemoriaRamDto modificar(Long idMemoriaRam, MemoriaRamDto memoriaRamDto);
+    void eliminar(Long idMemoriaRam);
 }

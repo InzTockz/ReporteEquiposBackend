@@ -1,28 +1,48 @@
 package com.gestorinventario.services.impl;
 
-import com.gestorinventario.entity.MemoriaRamEntity;
+import com.gestorinventario.dto.MemoriaRamDto;
+import com.gestorinventario.mapper.MemoriaRamMapper;
+import com.gestorinventario.repository.MemoriaRamRepository;
 import com.gestorinventario.services.MemoriaRamService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class MemoriaRamServiceImpl implements MemoriaRamService {
-    @Override
-    public List<MemoriaRamEntity> listado() {
-        return List.of();
+
+    private final MemoriaRamRepository memoriaRamRepository;
+    private final MemoriaRamMapper memoriaRamMapper;
+
+    public MemoriaRamServiceImpl(MemoriaRamRepository memoriaRamRepository, MemoriaRamMapper memoriaRamMapper) {
+        this.memoriaRamRepository = memoriaRamRepository;
+        this.memoriaRamMapper = memoriaRamMapper;
     }
 
     @Override
-    public MemoriaRamEntity registrar(MemoriaRamEntity memoriaRamEntity) {
-        return null;
+    public List<MemoriaRamDto> listado() {
+        return this.memoriaRamMapper.listadoDao(this.memoriaRamRepository.findAll());
     }
 
     @Override
-    public MemoriaRamEntity modificar(int idMemoriaRam, MemoriaRamEntity memoriaRamEntity) {
-        return null;
+    public MemoriaRamDto registrar(MemoriaRamDto memoriaRamDto) {
+        return this.memoriaRamMapper.memoriaRamDto(this.memoriaRamRepository.save(this.memoriaRamMapper.memoriaRamEntity(memoriaRamDto)));
     }
 
     @Override
-    public void eliminar(int idMemoriaRam) {
+    public MemoriaRamDto modificar(Long idMemoriaRam, MemoriaRamDto memoriaRamDto) {
+        if(idMemoriaRam!=null){
+            return this.memoriaRamMapper
+                    .memoriaRamDto(this.memoriaRamRepository
+                            .save(this.memoriaRamMapper
+                                    .memoriaRamEntity(memoriaRamDto)));
+        } else {
+            return null;
+        }
+    }
 
+    @Override
+    public void eliminar(Long idMemoriaRam) {
+        this.memoriaRamRepository.deleteById(idMemoriaRam);
     }
 }

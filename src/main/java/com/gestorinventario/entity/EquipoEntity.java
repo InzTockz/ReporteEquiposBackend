@@ -20,7 +20,7 @@ public class EquipoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_equipo")
-    private int idEquipo;
+    private Long idEquipo;
 
     @Column(name = "modelo_equipo")
     private String modeloEquipo;

@@ -1,28 +1,45 @@
 package com.gestorinventario.services.impl;
 
-import com.gestorinventario.entity.UsuarioAsignadoEntity;
+import com.gestorinventario.dto.UsuarioAsignadoDto;
+import com.gestorinventario.mapper.UsuarioAsignadoMapper;
+import com.gestorinventario.repository.UsuarioAsignadoRepository;
 import com.gestorinventario.services.UsuarioAsignadoService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UsuarioAsignadoServiceImpl implements UsuarioAsignadoService {
-    @Override
-    public List<UsuarioAsignadoEntity> listado() {
-        return List.of();
+
+    private final UsuarioAsignadoRepository usuarioAsignadoRepository;
+    private final UsuarioAsignadoMapper usuarioAsignadoMapper;
+
+    public UsuarioAsignadoServiceImpl(UsuarioAsignadoRepository usuarioAsignadoRepository, UsuarioAsignadoMapper usuarioAsignadoMapper) {
+        this.usuarioAsignadoRepository = usuarioAsignadoRepository;
+        this.usuarioAsignadoMapper = usuarioAsignadoMapper;
     }
 
     @Override
-    public UsuarioAsignadoEntity registrar(UsuarioAsignadoEntity usuarioAsignadoEntity) {
-        return null;
+    public List<UsuarioAsignadoDto> listado() {
+        return this.usuarioAsignadoMapper.listadoDao(this.usuarioAsignadoRepository.findAll());
     }
 
     @Override
-    public UsuarioAsignadoEntity modificar(int idUsuarioAsingado, UsuarioAsignadoEntity usuarioAsignadoEntity) {
-        return null;
+    public UsuarioAsignadoDto registrar(UsuarioAsignadoDto usuarioAsignadoDto) {
+        return this.usuarioAsignadoMapper.usuarioAsignadoDao(this.usuarioAsignadoRepository.save(this.usuarioAsignadoMapper.usuarioAsignadoEntity(usuarioAsignadoDto)));
     }
 
     @Override
-    public void eliminar(int idUsuarioAsignado) {
+    public UsuarioAsignadoDto modificar(Long idUsuarioAsingado, UsuarioAsignadoDto usuarioAsignadoDto) {
+        if(idUsuarioAsingado!=null){
+            return this.usuarioAsignadoMapper.usuarioAsignadoDao(this.usuarioAsignadoRepository.save(this.usuarioAsignadoMapper.usuarioAsignadoEntity(usuarioAsignadoDto)));
+        } else {
+            return null;
+        }
+    }
 
+    @Override
+    public void eliminar(Long idUsuarioAsignado) {
+        this.usuarioAsignadoRepository.deleteById(idUsuarioAsignado);
     }
 }

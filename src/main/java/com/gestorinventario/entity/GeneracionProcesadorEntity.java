@@ -7,18 +7,18 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
-@Table(name = "tbl_areas")
+@Table(name = "tbl_generacion_procesador")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class AreasEntity {
+public class GeneracionProcesadorEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_area")
-    private Long idArea;
+    @Column(name = "id_generacion_procesador")
+    private Long idGeneracionProcesador;
 
-    @Column(name = "descripcion_area")
-    private String descripcionArea;
+    @Column(name = "descripcion_generacion_procesador")
+    private String descripcionGeneracionProcesador;
 }

@@ -1,16 +1,14 @@
-package com.gestorinventario.dao;
+package com.gestorinventario.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-public class AreasDao {
+public class AreasDto {
 
-    private int idArea;
+    private Long idArea;
     private String descripcionArea;
 }

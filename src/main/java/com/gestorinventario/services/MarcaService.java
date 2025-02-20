@@ -1,13 +1,13 @@
 package com.gestorinventario.services;
 
-import com.gestorinventario.entity.MarcaEntity;
+import com.gestorinventario.dto.MarcaDto;
 
 import java.util.List;
 
 public interface MarcaService {
 
-    List<MarcaEntity> listado();
-    MarcaEntity registrar(MarcaEntity marcaEntity);
-    MarcaEntity modificar(int idMarca, MarcaEntity marcaEntity);
-    void eliminar(int idMarca);
+    List<MarcaDto> listado();
+    MarcaDto registrar(MarcaDto marcaDto);
+    MarcaDto modificar(Long idMarca, MarcaDto marcaDto);
+    void eliminar(Long idMarca);
 }

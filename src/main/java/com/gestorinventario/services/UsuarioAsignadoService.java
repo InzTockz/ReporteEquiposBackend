@@ -1,13 +1,13 @@
 package com.gestorinventario.services;
 
-import com.gestorinventario.entity.UsuarioAsignadoEntity;
+import com.gestorinventario.dto.UsuarioAsignadoDto;
 
 import java.util.List;
 
 public interface UsuarioAsignadoService {
 
-    List<UsuarioAsignadoEntity> listado();
-    UsuarioAsignadoEntity registrar(UsuarioAsignadoEntity usuarioAsignadoEntity);
-    UsuarioAsignadoEntity modificar(int idUsuarioAsingado, UsuarioAsignadoEntity usuarioAsignadoEntity);
-    void eliminar(int idUsuarioAsignado);
+    List<UsuarioAsignadoDto> listado();
+    UsuarioAsignadoDto registrar(UsuarioAsignadoDto usuarioAsignadoDto);
+    UsuarioAsignadoDto modificar(Long idUsuarioAsingado, UsuarioAsignadoDto usuarioAsignadoDto);
+    void eliminar(Long idUsuarioAsignado);
 }

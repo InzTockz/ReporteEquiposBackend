@@ -1,28 +1,51 @@
 package com.gestorinventario.services.impl;
 
-import com.gestorinventario.entity.HistoricoEquiposEntity;
+import com.gestorinventario.dto.HistoricoEquipoDto;
+import com.gestorinventario.mapper.HistoricoEquipoMapper;
+import com.gestorinventario.repository.HistoricoEquiposRepository;
 import com.gestorinventario.services.HistoricoEquiposService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class HistoricoEquiposServiceImpl implements HistoricoEquiposService {
-    @Override
-    public List<HistoricoEquiposEntity> listado() {
-        return List.of();
+
+    private final HistoricoEquiposRepository historicoEquiposRepository;
+    private final HistoricoEquipoMapper historicoEquipoMapper;
+
+    public HistoricoEquiposServiceImpl(HistoricoEquiposRepository historicoEquiposRepository, HistoricoEquipoMapper historicoEquipoMapper) {
+        this.historicoEquiposRepository = historicoEquiposRepository;
+        this.historicoEquipoMapper = historicoEquipoMapper;
     }
 
     @Override
-    public HistoricoEquiposEntity registrar(HistoricoEquiposEntity historicoEquiposEntity) {
-        return null;
+    public List<HistoricoEquipoDto> listado() {
+        return this.historicoEquipoMapper.listadoDto(this.historicoEquiposRepository.findAll());
     }
 
     @Override
-    public HistoricoEquiposEntity modificar(int idHistoricoEquipos, HistoricoEquiposEntity historicoEquiposEntity) {
-        return null;
+    public HistoricoEquipoDto registrar(HistoricoEquipoDto historicoEquipoDto) {
+        return this.historicoEquipoMapper
+                .historicoEquipoDto(this.historicoEquiposRepository
+                        .save(this.historicoEquipoMapper
+                                .historicoEquipoEntity(historicoEquipoDto)));
     }
 
     @Override
-    public void eliminar(int idHistoricoEquipos) {
+    public HistoricoEquipoDto modificar(Long idHistoricoEquipos, HistoricoEquipoDto historicoEquipoDto) {
+        if(idHistoricoEquipos!=null){
+            return this.historicoEquipoMapper
+                    .historicoEquipoDto(this.historicoEquiposRepository
+                            .save(this.historicoEquipoMapper
+                                    .historicoEquipoEntity(historicoEquipoDto)));
+        } else {
+            return null;
+        }
+    }
 
+    @Override
+    public void eliminar(Long idHistoricoEquipos) {
+        this.historicoEquiposRepository.deleteById(idHistoricoEquipos);
     }
 }

@@ -1,13 +1,13 @@
 package com.gestorinventario.services;
 
-import com.gestorinventario.entity.HistoricoAsignacionEntity;
+import com.gestorinventario.dto.HistoricoAsignacionDto;
 
 import java.util.List;
 
 public interface HistoricoAsignacionService {
 
-    List<HistoricoAsignacionEntity> listado();
-    HistoricoAsignacionEntity registrar(HistoricoAsignacionEntity historicoAsignacionEntity);
-    HistoricoAsignacionEntity modificar(int idHistoricoAsignacion, HistoricoAsignacionEntity historicoAsignacionEntity);
-    void eliminar(int idHistoricoAsignacion);
+    List<HistoricoAsignacionDto> listado();
+    HistoricoAsignacionDto registrar(HistoricoAsignacionDto historicoAsignacionDto);
+    HistoricoAsignacionDto modificar(Long idHistoricoAsignacion, HistoricoAsignacionDto historicoAsignacionDto);
+    void eliminar(Long idHistoricoAsignacion);
 }

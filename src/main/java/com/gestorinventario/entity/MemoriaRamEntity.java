@@ -17,12 +17,8 @@ public class MemoriaRamEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_memoria_ram")
-    private int idMemoriaRam;
+    private Long idMemoriaRam;
 
     @Column(name = "tamanio_memoria_ram")
     private String tamanioMemoriaRam;
-
-    @JoinColumn(name = "marca")
-    @ManyToOne
-    private MarcaEntity marcaEntity;
 }

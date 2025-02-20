@@ -1,4 +1,4 @@
-package com.gestorinventario.dao;
+package com.gestorinventario.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,11 +11,11 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class HistoricoAsignacionDao {
+public class HistoricoAsignacionDto {
 
-    private int idHistorico;
-    private int idUsuarioAsignado;
-    private int idEquipo;
+    private Long idHistorico;
+    private Long idUsuarioAsignado;
+    private Long idEquipo;
     private String detalleHistorico;
     private LocalDate fechaHistorico;
     private boolean estadoHistorico;

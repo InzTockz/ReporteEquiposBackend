@@ -5,10 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-
-import java.time.Instant;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Table(name = "tbl_historico_asignacion")
@@ -21,7 +18,7 @@ public class HistoricoAsignacionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_historico")
-    private int idHistorico;
+    private Long idHistorico;
 
     @JoinColumn(name = "usuario_asignado")
     @ManyToOne()

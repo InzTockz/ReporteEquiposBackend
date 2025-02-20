@@ -1,4 +1,4 @@
-package com.gestorinventario.dao;
+package com.gestorinventario.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,17 +11,18 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class EquipoDao {
+public class EquipoDto {
 
-    private int IdEquipo;
+    private Long IdEquipo;
     private String modeloEquipo;
     private String serieEquipo;
     private LocalDate fechaIngresoEquipo;
     private LocalDate fechaFabricacionEquipo;
-    private int idAlmacenamiento;
-    private int idProcesador;
-    private int idMarca;
+    private Long idAlmacenamiento;
+    private Long idProcesador;
+    private Long idMemoriaRam;
+    private Long idMarca;
     private boolean estadoEquipo;
     private boolean disponibilidadEquipo;
-    private int idHistoricoEquipos;
+    private Long idHistoricoEquipos;
 }

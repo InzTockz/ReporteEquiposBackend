@@ -1,13 +1,13 @@
 package com.gestorinventario.services;
 
-import com.gestorinventario.entity.AlmacenamientoEntity;
+import com.gestorinventario.dto.AlmacenamientoDto;
 
 import java.util.List;
 
 public interface AlmacenamientoService {
 
-    List<AlmacenamientoEntity> listado();
-    AlmacenamientoEntity registrar(AlmacenamientoEntity almacenamientoEntity);
-    AlmacenamientoEntity modificar(int idAlmacenamiento, AlmacenamientoEntity almacenamientoEntity);
-    void eliminar(int idAlmacenamiento);
+    List<AlmacenamientoDto> listado();
+    AlmacenamientoDto registrar(AlmacenamientoDto almacenamientoDto);
+    AlmacenamientoDto modificar(Long idAlmacenamiento, AlmacenamientoDto almacenamientoDto);
+    void eliminar(Long idAlmacenamiento);
 }

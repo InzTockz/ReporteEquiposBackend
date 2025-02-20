@@ -1,28 +1,30 @@
 package com.gestorinventario.services.impl;
 
-import com.gestorinventario.entity.HistoricoAsignacionEntity;
+import com.gestorinventario.dto.HistoricoAsignacionDto;
 import com.gestorinventario.services.HistoricoAsignacionService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class HistoricoAsignacionServiceImpl implements HistoricoAsignacionService {
     @Override
-    public List<HistoricoAsignacionEntity> listado() {
+    public List<HistoricoAsignacionDto> listado() {
         return List.of();
     }
 
     @Override
-    public HistoricoAsignacionEntity registrar(HistoricoAsignacionEntity historicoAsignacionEntity) {
+    public HistoricoAsignacionDto registrar(HistoricoAsignacionDto historicoAsignacionDto) {
         return null;
     }
 
     @Override
-    public HistoricoAsignacionEntity modificar(int idHistoricoAsignacion, HistoricoAsignacionEntity historicoAsignacionEntity) {
+    public HistoricoAsignacionDto modificar(Long idHistoricoAsignacion, HistoricoAsignacionDto historicoAsignacionDto) {
         return null;
     }
 
     @Override
-    public void eliminar(int idHistoricoAsignacion) {
+    public void eliminar(Long idHistoricoAsignacion) {
 
     }
 }

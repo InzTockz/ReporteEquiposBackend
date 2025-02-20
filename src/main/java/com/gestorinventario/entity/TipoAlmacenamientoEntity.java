@@ -17,7 +17,7 @@ public class TipoAlmacenamientoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_tipo_almacenamiento")
-    private int idTipoAlmacenamiento;
+    private Long idTipoAlmacenamiento;
     @Column(name = "tipo_almacenamiento")
     private String descripciontipoDeAlmacenamiento;
 }

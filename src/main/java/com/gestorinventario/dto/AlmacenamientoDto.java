@@ -1,4 +1,4 @@
-package com.gestorinventario.dao;
+package com.gestorinventario.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,9 +9,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class AlmacenamientoDao {
+public class AlmacenamientoDto {
 
-    private int idAlmacenamiento;
+    private Long idAlmacenamiento;
     private String capacidadAlmacenamiento;
-    private int idTipoAlmacenamiento;
+    private Long idTipoAlmacenamiento;
 }

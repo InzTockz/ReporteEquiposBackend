@@ -17,7 +17,7 @@ public class UsuarioAsignadoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario_asignado")
-    private int idUsuarioAsignado;
+    private Long idUsuarioAsignado;
 
     @Column(name = "nombres_usuario")
     private String nombreUsuarioAsignado;
@@ -26,7 +26,7 @@ public class UsuarioAsignadoEntity {
     @Column(name = "correo_usuario")
     private String correoUsuarioAsignado;
 
-    @JoinColumn(name = "area")
     @ManyToOne()
+    @JoinColumn(name = "area")
     private AreasEntity areasEntity;
 }

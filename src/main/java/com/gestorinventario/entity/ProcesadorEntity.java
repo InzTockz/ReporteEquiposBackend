@@ -17,12 +17,14 @@ public class ProcesadorEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_procesador")
-    private int idProcesador;
+    private Long idProcesador;
 
     @Column(name = "modelo_procesador")
     private String modeloProcesador;
-    @Column(name = "generacion_procesador")
-    private int generacionProcesador;
+
+    @ManyToOne
+    @JoinColumn(name = "generacion_procesador")
+    private GeneracionProcesadorEntity generacionProcesadorEntity;
 
     @JoinColumn(name = "marca")
     @ManyToOne
