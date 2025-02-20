@@ -24,5 +24,4 @@ public class EquipoDto {
     private Long idMarca;
     private boolean estadoEquipo;
     private boolean disponibilidadEquipo;
-    private Long idHistoricoEquipos;
 }

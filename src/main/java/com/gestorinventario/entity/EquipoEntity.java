@@ -51,8 +51,4 @@ public class EquipoEntity {
     private boolean estadoEquipo;
     @Column(name = "disponibilidad_equipo")
     private boolean disponibilidadEquipo;
-
-    @JoinColumn(name = "historico")
-    @ManyToOne
-    private HistoricoEquiposEntity historicoEquiposEntity;
 }

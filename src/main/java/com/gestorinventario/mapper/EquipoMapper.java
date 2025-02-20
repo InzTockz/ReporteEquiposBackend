@@ -16,14 +16,12 @@ public interface EquipoMapper {
     @Mapping(target = "idProcesador", source = "procesadorEntity.idProcesador")
     @Mapping(target = "idMemoriaRam", source = "memoriaRamEntity.idMemoriaRam")
     @Mapping(target = "idMarca", source = "marcaEntity.idMarca")
-    @Mapping(target = "idHistoricoEquipos", source = "historicoEquiposEntity.idHistoricoEquipos")
     List<EquipoDto> listadoDto(List<EquipoEntity> equipoEntities);
 
     @Mapping(target = "idAlmacenamiento", source = "almacenamientoEntity.idAlmacenamiento")
     @Mapping(target = "idProcesador", source = "procesadorEntity.idProcesador")
     @Mapping(target = "idMemoriaRam", source = "memoriaRamEntity.idMemoriaRam")
     @Mapping(target = "idMarca", source = "marcaEntity.idMarca")
-    @Mapping(target = "idHistoricoEquipos", source = "historicoEquiposEntity.idHistoricoEquipos")
     EquipoDto equipoDao(EquipoEntity equipoEntity);
 
     @InheritInverseConfiguration

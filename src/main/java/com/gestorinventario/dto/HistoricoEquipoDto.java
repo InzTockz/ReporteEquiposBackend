@@ -16,4 +16,5 @@ public class HistoricoEquipoDto {
     private Long idHistoricoEquipos;
     private String observacionEquipos;
     private LocalDate fechaHistoricoEquipos;
+    private Long idEquipo;
 }

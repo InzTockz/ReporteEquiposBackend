@@ -27,4 +27,8 @@ public class HistoricoEquiposEntity {
 
     @Column(name = "fecha_historico_equipos")
     private LocalDate fechaHistoricoEquipos;
+
+    @ManyToOne()
+    @JoinColumn(name = "equipo")
+    private EquipoEntity equipoEntity;
 }
