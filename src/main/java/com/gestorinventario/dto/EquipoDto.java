@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @ToString
 public class EquipoDto {
 
-    private Long IdEquipo;
+    private Long idEquipo;
     private String modeloEquipo;
     private String serieEquipo;
     private LocalDate fechaIngresoEquipo;
