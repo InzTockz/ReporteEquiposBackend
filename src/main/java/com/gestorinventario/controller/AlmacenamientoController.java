@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/almacenamiento")
+@CrossOrigin("*")
 public class AlmacenamientoController {
 
     private final AlmacenamientoService almacenamientoService;

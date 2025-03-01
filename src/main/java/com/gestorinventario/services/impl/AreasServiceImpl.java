@@ -4,6 +4,7 @@ import com.gestorinventario.dto.AreasDto;
 import com.gestorinventario.mapper.AreasMapper;
 import com.gestorinventario.repository.AreasRepository;
 import com.gestorinventario.services.AreasService;
+import jdk.jshell.spi.ExecutionControl;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -41,5 +42,10 @@ public class AreasServiceImpl implements AreasService {
     @Override
     public void eliminar(Long idArea) {
         this.areasRepository.deleteById(idArea);
+    }
+
+    @Override
+    public List<AreasDto> listadoPorId(Long idArea) {
+        return this.areasMapper.listadoDao(this.areasRepository.listadoPorId(idArea));
     }
 }

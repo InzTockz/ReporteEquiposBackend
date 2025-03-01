@@ -13,6 +13,6 @@ public class UsuarioAsignadoDto {
     private String nombreUsuarioAsignado;
     private String cargoUsuarioAsignado;
     private String correoUsuarioAsignado;
-    //private AreasDto areasDto;
-    private Long idArea;
+    private String idArea;
+    private String descripcionArea;
 }

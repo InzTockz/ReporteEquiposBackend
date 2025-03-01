@@ -10,4 +10,5 @@ public interface AreasService {
     AreasDto registrar(AreasDto areasDto);
     AreasDto modificar(Long idArea, AreasDto areasDto);
     void eliminar(Long idArea);
+    List<AreasDto> listadoPorId(Long idArea);
 }

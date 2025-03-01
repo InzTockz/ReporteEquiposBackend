@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/usuario-asignado")
+@CrossOrigin("*")
 public class UsuarioAsignadoController {
 
     private final UsuarioAsignadoService usuarioAsignadoService;
@@ -37,5 +38,10 @@ public class UsuarioAsignadoController {
     public ResponseEntity<Void> eliminar(@PathVariable Long idUsuarioAsignado){
         this.usuarioAsignadoService.eliminar(idUsuarioAsignado);
         return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
+    @GetMapping("/listado/{idUsuarioAsignado}")
+    public ResponseEntity<List<UsuarioAsignadoDto>> listadoPorId(@PathVariable Long idUsuarioAsignado){
+        return ResponseEntity.status(HttpStatus.OK).body(this.usuarioAsignadoService.listadoPorId(idUsuarioAsignado));
     }
 }

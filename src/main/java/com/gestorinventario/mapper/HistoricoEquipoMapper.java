@@ -12,9 +12,9 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface HistoricoEquipoMapper {
 
-    @Mapping(target = "idEquipo", source = "equipoEntity.idEquipo")
+    //@Mapping(target = "idEquipo", source = "equipoEntity.idEquipo")
     List<HistoricoEquipoDto> listadoDto(List<HistoricoEquiposEntity> historicoEquiposEntities);
-    @Mapping(target = "idEquipo", source = "equipoEntity.idEquipo")
+    //@Mapping(target = "idEquipo", source = "equipoEntity.idEquipo")
     HistoricoEquipoDto historicoEquipoDto(HistoricoEquiposEntity historicoEquiposEntity);
 
     @InheritInverseConfiguration

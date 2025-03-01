@@ -13,10 +13,23 @@ import java.time.LocalDate;
 @ToString
 public class HistoricoAsignacionDto {
 
+    /*
     private Long idHistorico;
     private Long idUsuarioAsignado;
     private Long idEquipo;
     private String detalleHistorico;
     private LocalDate fechaHistorico;
     private boolean estadoHistorico;
+    */
+
+    private Long idHistorico;
+    private String modeloEquipo;
+    private String serieEquipo;
+    private String modeloProcesador;
+    private String nombreMarca;
+    private String capacidadAlmacenamiento;
+    private String tamanioMemoriaRam;
+    private LocalDate fechaIngresoEquipo;
+    private LocalDate fechaFabricacionEquipo;
+    private Long idEquipo;
 }

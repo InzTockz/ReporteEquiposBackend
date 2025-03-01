@@ -12,13 +12,28 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface HistoricoAsignacionMapper {
 
-    @Mapping(target = "idUsuarioAsignado", source = "usuarioAsignadoEntity.idUsuarioAsignado")
+    @Mapping(target = "modeloEquipo", source = "equipoEntity.idUsuarioAsignado")
+    @Mapping(target = "serieEquipo", source = "equipoEntity.serieEquipo")
+    @Mapping(target = "modeloProcesador", source = "equipoEntity.procesadorEntity.modeloProcesador")
+    @Mapping(target = "nombreMarca", source = "equipoEntity.marcaEntity.nombreMarca")
+    @Mapping(target = "capacidadAlmacenamiento", source = "equipoEntity.almacenamientoEntity.capacidadAlmacenamiento")
+    @Mapping(target = "tamanioMemoriaRam", source = "equipoEntity.memoriaRamEntity.tamanioMemoriaRam")
+    @Mapping(target = "fechaIngresoEquipo", source = "equipoEntity.fechaIngresoEquipo")
+    @Mapping(target = "fechaFabricacionEquipo", source = "equipoEntity.fechaFabricacionEquipo")
     @Mapping(target = "idEquipo", source = "equipoEntity.idEquipo")
     List<HistoricoAsignacionDto> listadoDto(List<HistoricoAsignacionEntity> historicoAsignacionEntities);
 
-    @Mapping(target = "idUsuarioAsignado", source = "usuarioAsignadoEntity.idUsuarioAsignado")
+    @Mapping(target = "modeloEquipo", source = "equipoEntity.modeloEquipo")
+    @Mapping(target = "serieEquipo", source = "equipoEntity.serieEquipo")
+    @Mapping(target = "modeloProcesador", source = "equipoEntity.procesadorEntity.modeloProcesador")
+    @Mapping(target = "nombreMarca", source = "equipoEntity.marcaEntity.nombreMarca")
+    @Mapping(target = "capacidadAlmacenamiento", source = "equipoEntity.almacenamientoEntity.capacidadAlmacenamiento")
+    @Mapping(target = "tamanioMemoriaRam", source = "equipoEntity.memoriaRamEntity.tamanioMemoriaRam")
+    @Mapping(target = "fechaIngresoEquipo", source = "equipoEntity.fechaIngresoEquipo")
+    @Mapping(target = "fechaFabricacionEquipo", source = "equipoEntity.fechaFabricacionEquipo")
     @Mapping(target = "idEquipo", source = "equipoEntity.idEquipo")
     HistoricoAsignacionDto historicoAsignacionDto (HistoricoAsignacionEntity historicoAsignacionEntity);
+
 
     @InheritInverseConfiguration
     HistoricoAsignacionEntity historiAsignacionEntity (HistoricoAsignacionDto historicoAsignacionDto);

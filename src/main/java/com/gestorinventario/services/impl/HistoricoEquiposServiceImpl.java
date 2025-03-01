@@ -48,4 +48,9 @@ public class HistoricoEquiposServiceImpl implements HistoricoEquiposService {
     public void eliminar(Long idHistoricoEquipos) {
         this.historicoEquiposRepository.deleteById(idHistoricoEquipos);
     }
+
+    @Override
+    public List<HistoricoEquipoDto> listadoPorIdEquipo(Long idEquipo) {
+        return this.historicoEquipoMapper.listadoDto(this.historicoEquiposRepository.findAllByEquipoEntityIdEquipo(idEquipo));
+    }
 }

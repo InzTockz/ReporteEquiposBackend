@@ -10,8 +10,11 @@ import java.util.List;
 public interface UsuarioAsignadoMapper {
 
     @Mapping(target = "idArea", source = "areasEntity.idArea")
+    @Mapping(target = "descripcionArea", source = "areasEntity.descripcionArea")
     List<UsuarioAsignadoDto> listadoDao(List<UsuarioAsignadoEntity> usuarioAsignadoEntities);
+
     @Mapping(target = "idArea", source = "areasEntity.idArea")
+    @Mapping(target = "descripcionArea", source = "areasEntity.descripcionArea")
     UsuarioAsignadoDto usuarioAsignadoDao(UsuarioAsignadoEntity usuarioAsignadoEntity);
 
     @InheritInverseConfiguration

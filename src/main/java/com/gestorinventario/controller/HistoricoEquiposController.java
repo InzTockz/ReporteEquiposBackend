@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/hstorico-equipo")
+@CrossOrigin("*")
 public class HistoricoEquiposController {
 
     private final HistoricoEquiposService historicoEquiposService;
@@ -38,6 +39,11 @@ public class HistoricoEquiposController {
     public ResponseEntity<Void> eliminar(@PathVariable Long idHistoricoEquipo){
         this.historicoEquiposService.eliminar(idHistoricoEquipo);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/listado/{idEquipo}")
+    public ResponseEntity<List<HistoricoEquipoDto>> listadoPorIdEquipo(@PathVariable Long idEquipo){
+        return ResponseEntity.status(HttpStatus.OK).body(this.historicoEquiposService.listadoPorIdEquipo(idEquipo));
     }
 
 }

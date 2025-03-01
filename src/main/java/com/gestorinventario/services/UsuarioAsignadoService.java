@@ -10,4 +10,5 @@ public interface UsuarioAsignadoService {
     UsuarioAsignadoDto registrar(UsuarioAsignadoDto usuarioAsignadoDto);
     UsuarioAsignadoDto modificar(Long idUsuarioAsingado, UsuarioAsignadoDto usuarioAsignadoDto);
     void eliminar(Long idUsuarioAsignado);
+    List<UsuarioAsignadoDto> listadoPorId(Long idUsuarioAsignado);
 }

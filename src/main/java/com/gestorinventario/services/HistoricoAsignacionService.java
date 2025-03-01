@@ -10,4 +10,5 @@ public interface HistoricoAsignacionService {
     HistoricoAsignacionDto registrar(HistoricoAsignacionDto historicoAsignacionDto);
     HistoricoAsignacionDto modificar(Long idHistoricoAsignacion, HistoricoAsignacionDto historicoAsignacionDto);
     void eliminar(Long idHistoricoAsignacion);
+    HistoricoAsignacionDto buscarPorIdUsuarioAsignado(Long idUsuarioAsignado);
 }

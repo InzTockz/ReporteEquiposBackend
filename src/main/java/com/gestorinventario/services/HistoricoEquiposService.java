@@ -10,4 +10,6 @@ public interface HistoricoEquiposService {
     HistoricoEquipoDto registrar(HistoricoEquipoDto historicoEquipoDto);
     HistoricoEquipoDto modificar(Long idHistoricoEquipos, HistoricoEquipoDto historicoEquipoDto);
     void eliminar(Long idHistoricoEquipos);
+
+    List<HistoricoEquipoDto> listadoPorIdEquipo(Long idEquipo);
 }

@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/memoria-ram")
+@CrossOrigin("*")
 public class MemoriaRamController {
 
     private final MemoriaRamService memoriaRamService;

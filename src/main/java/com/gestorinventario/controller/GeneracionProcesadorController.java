@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/generacion-procesador")
+@CrossOrigin("*")
 public class GeneracionProcesadorController {
 
     private final GeneracionProcesadorService generacionProcesadorService;

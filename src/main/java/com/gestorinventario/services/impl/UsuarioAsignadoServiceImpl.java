@@ -42,4 +42,9 @@ public class UsuarioAsignadoServiceImpl implements UsuarioAsignadoService {
     public void eliminar(Long idUsuarioAsignado) {
         this.usuarioAsignadoRepository.deleteById(idUsuarioAsignado);
     }
+
+    @Override
+    public List<UsuarioAsignadoDto> listadoPorId(Long idUsuarioAsignado) {
+        return this.usuarioAsignadoMapper.listadoDao(this.usuarioAsignadoRepository.listadoPorArea(idUsuarioAsignado));
+    }
 }

@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/historico-asignacion")
+@CrossOrigin("*")
 public class HistoricoAsignacionController {
 
     private final HistoricoAsignacionService historicoAsignacionService;
@@ -39,4 +40,10 @@ public class HistoricoAsignacionController {
         this.historicoAsignacionService.eliminar(idHistoricoAsignacion);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/buscarPorIdUsuarioAsignado/{idUsuarioAsignado}")
+    public ResponseEntity<HistoricoAsignacionDto> buscarPorIdUsuarioAsignado(@PathVariable Long idUsuarioAsignado){
+        return ResponseEntity.status(HttpStatus.OK).body(this.historicoAsignacionService.buscarPorIdUsuarioAsignado(idUsuarioAsignado));
+    }
+
 }

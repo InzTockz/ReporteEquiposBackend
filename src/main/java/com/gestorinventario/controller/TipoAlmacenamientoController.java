@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/tipo-almacenamiento")
+@CrossOrigin("*")
 public class TipoAlmacenamientoController {
 
     private final TipoAlmacenamientoService tipoAlmacenamientoService;
