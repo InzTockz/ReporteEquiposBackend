@@ -1,4 +1,4 @@
-package com.gestorinventario.dto;
+package com.gestorinventario.dto.historicoAsignacion;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,8 +1,10 @@
 package com.gestorinventario.controller;
 
-import com.gestorinventario.dto.HistoricoAsignacionDto;
+import com.gestorinventario.dto.historicoAsignacion.HistoricoAsignacionDto;
+import com.gestorinventario.dto.historicoAsignacion.HistoricoAsignacionListadoResponse;
+import com.gestorinventario.dto.historicoAsignacion.HistoricoAsignacionRequest;
+import com.gestorinventario.dto.historicoAsignacion.HistoricoAsignacionResponse;
 import com.gestorinventario.services.HistoricoAsignacionService;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,18 +23,18 @@ public class HistoricoAsignacionController {
     }
 
     @GetMapping("/listado")
-    public ResponseEntity<List<HistoricoAsignacionDto>> listado(){
+    public ResponseEntity<List<HistoricoAsignacionListadoResponse>> listado(){
         return ResponseEntity.status(HttpStatus.OK).body(this.historicoAsignacionService.listado());
     }
 
     @PostMapping("/registrar")
-    public ResponseEntity<HistoricoAsignacionDto> registrar(@RequestBody HistoricoAsignacionDto historicoAsignacionDto){
-        return ResponseEntity.status(HttpStatus.CREATED).body(this.historicoAsignacionService.registrar(historicoAsignacionDto));
+    public ResponseEntity<HistoricoAsignacionResponse> registrar(@RequestBody HistoricoAsignacionRequest historicoAsignacionRequest){
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.historicoAsignacionService.registrar(historicoAsignacionRequest));
     }
 
     @PutMapping("/modificar/{idHistoricoAsignacion}")
-    public ResponseEntity<HistoricoAsignacionDto> modificar(@PathVariable Long idHistoricoAsignacion, @RequestBody HistoricoAsignacionDto historicoAsignacionDto){
-        return ResponseEntity.status(HttpStatus.OK).body(this.historicoAsignacionService.modificar(idHistoricoAsignacion, historicoAsignacionDto));
+    public ResponseEntity<HistoricoAsignacionResponse> modificar(@PathVariable Long idHistoricoAsignacion, @RequestBody HistoricoAsignacionRequest historicoAsignacionRequest){
+        return ResponseEntity.status(HttpStatus.OK).body(this.historicoAsignacionService.modificar(idHistoricoAsignacion, historicoAsignacionRequest));
     }
 
     @DeleteMapping("/eliminar/{idHistoricoAsignacion}")
@@ -42,7 +44,7 @@ public class HistoricoAsignacionController {
     }
 
     @GetMapping("/buscarPorIdUsuarioAsignado/{idUsuarioAsignado}")
-    public ResponseEntity<HistoricoAsignacionDto> buscarPorIdUsuarioAsignado(@PathVariable Long idUsuarioAsignado){
+    public ResponseEntity<HistoricoAsignacionResponse> buscarPorIdUsuarioAsignado(@PathVariable Long idUsuarioAsignado){
         return ResponseEntity.status(HttpStatus.OK).body(this.historicoAsignacionService.buscarPorIdUsuarioAsignado(idUsuarioAsignado));
     }
 

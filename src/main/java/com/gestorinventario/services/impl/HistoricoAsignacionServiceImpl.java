@@ -1,6 +1,9 @@
 package com.gestorinventario.services.impl;
 
-import com.gestorinventario.dto.HistoricoAsignacionDto;
+import com.gestorinventario.dto.historicoAsignacion.HistoricoAsignacionDto;
+import com.gestorinventario.dto.historicoAsignacion.HistoricoAsignacionListadoResponse;
+import com.gestorinventario.dto.historicoAsignacion.HistoricoAsignacionRequest;
+import com.gestorinventario.dto.historicoAsignacion.HistoricoAsignacionResponse;
 import com.gestorinventario.entity.HistoricoAsignacionEntity;
 import com.gestorinventario.mapper.HistoricoAsignacionMapper;
 import com.gestorinventario.repository.HistoricoAsignacionRepository;
@@ -22,31 +25,31 @@ public class HistoricoAsignacionServiceImpl implements HistoricoAsignacionServic
     }
 
     @Override
-    public List<HistoricoAsignacionDto> listado() {
+    public List<HistoricoAsignacionListadoResponse> listado() {
         return this.historicoAsignacionMapper.listadoDto(this.historicoAsignacionRepository.findAll());
     }
 
     @Override
-    public HistoricoAsignacionDto registrar(HistoricoAsignacionDto historicoAsignacionDto) {
-        /*return this.historicoAsignacionMapper
+    public HistoricoAsignacionResponse registrar(HistoricoAsignacionRequest historicoAsignacionRequest) {
+        return this.historicoAsignacionMapper
                 .historicoAsignacionDto(this.historicoAsignacionRepository
                         .save(this.historicoAsignacionMapper
-                                .historiAsignacionEntity(historicoAsignacionDto))); */
-        return null;
+                                .historiAsignacionEntity(historicoAsignacionRequest)));
+        //return null;
     }
 
     @Override
-    public HistoricoAsignacionDto modificar(Long idHistoricoAsignacion, HistoricoAsignacionDto historicoAsignacionDto) {
-        /*if(idHistoricoAsignacion!=null){
+    public HistoricoAsignacionResponse modificar(Long idHistoricoAsignacion, HistoricoAsignacionRequest historicoAsignacionRequest) {
+        if(idHistoricoAsignacion!=null){
             return this.historicoAsignacionMapper
                     .historicoAsignacionDto(this.historicoAsignacionRepository
                             .save(this.historicoAsignacionMapper
-                                    .historiAsignacionEntity(historicoAsignacionDto)));
+                                    .historiAsignacionEntity(historicoAsignacionRequest)));
         } else {
             return null;
-        }*/
+        }
 
-        return null;
+        //return null;
     }
 
     @Override
@@ -55,7 +58,7 @@ public class HistoricoAsignacionServiceImpl implements HistoricoAsignacionServic
     }
 
     @Override
-    public HistoricoAsignacionDto buscarPorIdUsuarioAsignado(Long idUsuarioAsignado) {
+    public HistoricoAsignacionResponse buscarPorIdUsuarioAsignado(Long idUsuarioAsignado) {
         Optional<HistoricoAsignacionEntity> historicoAsignacionEntity = this.historicoAsignacionRepository.buscarPorIdUsuarioAsignado(idUsuarioAsignado);
 
         if(historicoAsignacionEntity.isPresent()){
