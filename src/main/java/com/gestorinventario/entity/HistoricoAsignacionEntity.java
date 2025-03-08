@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.annotations.CreationTimestamp;
+
 import java.time.LocalDate;
 
 @Entity
@@ -32,6 +34,7 @@ public class HistoricoAsignacionEntity {
     private String detalleHistorico;
 
     @Column(name = "fecha_historico")
+    @CreationTimestamp
     private LocalDate fechaHistorico;
 
     @Column(name = "estado_historico")

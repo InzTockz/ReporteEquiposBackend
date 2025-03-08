@@ -25,6 +25,11 @@ public class UsuarioAsignadoServiceImpl implements UsuarioAsignadoService {
     }
 
     @Override
+    public List<UsuarioAsignadoDto> listadoPorDisponibilidad() {
+        return this.usuarioAsignadoMapper.listadoDao(this.usuarioAsignadoRepository.listadoPorDisponibilidad());
+    }
+
+    @Override
     public UsuarioAsignadoDto registrar(UsuarioAsignadoDto usuarioAsignadoDto) {
         return this.usuarioAsignadoMapper.usuarioAsignadoDao(this.usuarioAsignadoRepository.save(this.usuarioAsignadoMapper.usuarioAsignadoEntity(usuarioAsignadoDto)));
     }

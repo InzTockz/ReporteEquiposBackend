@@ -13,4 +13,9 @@ public interface UsuarioAsignadoRepository extends JpaRepository<UsuarioAsignado
             "FROM UsuarioAsignadoEntity ua " +
             "WHERE ua.areasEntity.idArea=:idArea")
     List<UsuarioAsignadoEntity> listadoPorArea(@Param("idArea") Long idArea);
+
+    @Query("SELECT ua " +
+            "FROM UsuarioAsignadoEntity ua " +
+            "WHERE ua.equipoAsignado=false")
+    List<UsuarioAsignadoEntity> listadoPorDisponibilidad();
 }

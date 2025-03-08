@@ -7,6 +7,7 @@ import java.util.List;
 public interface UsuarioAsignadoService {
 
     List<UsuarioAsignadoDto> listado();
+    List<UsuarioAsignadoDto> listadoPorDisponibilidad();
     UsuarioAsignadoDto registrar(UsuarioAsignadoDto usuarioAsignadoDto);
     UsuarioAsignadoDto modificar(Long idUsuarioAsingado, UsuarioAsignadoDto usuarioAsignadoDto);
     void eliminar(Long idUsuarioAsignado);

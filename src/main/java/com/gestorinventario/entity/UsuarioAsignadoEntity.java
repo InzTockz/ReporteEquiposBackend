@@ -18,13 +18,14 @@ public class UsuarioAsignadoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario_asignado")
     private Long idUsuarioAsignado;
-
     @Column(name = "nombres_usuario")
     private String nombreUsuarioAsignado;
     @Column(name = "cargo_usuario")
     private String cargoUsuarioAsignado;
     @Column(name = "correo_usuario")
     private String correoUsuarioAsignado;
+    @Column(name = "equipo_asignado")
+    private boolean equipoAsignado;
 
     @ManyToOne()
     @JoinColumn(name = "area")

@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -26,6 +27,7 @@ public class HistoricoEquiposEntity {
     private String observacionEquipos;
 
     @Column(name = "fecha_historico_equipos")
+    @CreationTimestamp
     private LocalDate fechaHistoricoEquipos;
 
     @ManyToOne()

@@ -1,6 +1,5 @@
 package com.gestorinventario.controller;
 
-import com.gestorinventario.dto.historicoAsignacion.HistoricoAsignacionDto;
 import com.gestorinventario.dto.historicoAsignacion.HistoricoAsignacionListadoResponse;
 import com.gestorinventario.dto.historicoAsignacion.HistoricoAsignacionRequest;
 import com.gestorinventario.dto.historicoAsignacion.HistoricoAsignacionResponse;
@@ -44,7 +43,7 @@ public class HistoricoAsignacionController {
     }
 
     @GetMapping("/buscarPorIdUsuarioAsignado/{idUsuarioAsignado}")
-    public ResponseEntity<HistoricoAsignacionResponse> buscarPorIdUsuarioAsignado(@PathVariable Long idUsuarioAsignado){
+    public ResponseEntity<HistoricoAsignacionListadoResponse> buscarPorIdUsuarioAsignado(@PathVariable Long idUsuarioAsignado){
         return ResponseEntity.status(HttpStatus.OK).body(this.historicoAsignacionService.buscarPorIdUsuarioAsignado(idUsuarioAsignado));
     }
 

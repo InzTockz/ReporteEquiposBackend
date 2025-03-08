@@ -25,6 +25,11 @@ public class EquiposController {
         return ResponseEntity.status(HttpStatus.OK).body(this.equipoService.listado());
     }
 
+    @GetMapping("/listadoPorDisponibilidad")
+    public ResponseEntity<List<EquipoDto>> listadoPorDisponibilidad(){
+        return ResponseEntity.status(HttpStatus.OK).body(this.equipoService.listadoPorDisponibilidad());
+    }
+
     @PostMapping("/registrar")
     public ResponseEntity<EquipoDto> registrar(@RequestBody EquipoDto equipoDto){
         return ResponseEntity.status(HttpStatus.CREATED).body(this.equipoService.registrar(equipoDto));
@@ -39,5 +44,20 @@ public class EquiposController {
     public ResponseEntity<Void> eliminar(@PathVariable Long idEquipo){
         this.equipoService.eliminar(idEquipo);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/buscarPorIdEquipo/{idEquipo}")
+    public ResponseEntity<EquipoDto> buscarPorIdEquipo(@PathVariable Long idEquipo){
+        return ResponseEntity.status(HttpStatus.OK).body(this.equipoService.buscarPorIdEquipo(idEquipo));
+    }
+
+    @GetMapping("/listadoPorIdUsuarioAsignado/{idUsuarioAsignado}")
+    public ResponseEntity<List<EquipoDto>> listadoPorIdUsuarioAsignado(@PathVariable Long idUsuarioAsignado){
+        return ResponseEntity.status(HttpStatus.OK).body(this.equipoService.listadoPorIdUsuarioAsignado(idUsuarioAsignado));
+    }
+
+    @GetMapping("/listadoPorFechaDeFabricacion/ini/{fechaIni}/fin/{fechaFin}")
+    public ResponseEntity<List<EquipoDto>> listadoPorFechaDeFabricacion(@PathVariable Integer fechaIni, @PathVariable Integer fechaFin){
+        return ResponseEntity.status(HttpStatus.OK).body(this.equipoService.listadoEntreFechaDeFabricacion(fechaIni, fechaFin));
     }
 }

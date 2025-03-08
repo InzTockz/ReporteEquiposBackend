@@ -1,6 +1,7 @@
 package com.gestorinventario.services.impl;
 
 import com.gestorinventario.dto.EquipoDto;
+import com.gestorinventario.entity.EquipoEntity;
 import com.gestorinventario.mapper.EquipoMapper;
 import com.gestorinventario.repository.EquipoRepository;
 import com.gestorinventario.services.EquipoService;
@@ -25,6 +26,11 @@ public class EquipoServiceImpl implements EquipoService {
     }
 
     @Override
+    public List<EquipoDto> listadoPorDisponibilidad() {
+        return this.equipoMapper.listadoDto(this.equipoRepository.listadoPorDisponibilidad());
+    }
+
+    @Override
     public EquipoDto registrar(EquipoDto equipoDto) {
         return this.equipoMapper
                 .equipoDao(this.equipoRepository
@@ -45,5 +51,20 @@ public class EquipoServiceImpl implements EquipoService {
     @Override
     public void eliminar(Long idEquipo) {
         this.equipoRepository.deleteById(idEquipo);
+    }
+
+    @Override
+    public EquipoDto buscarPorIdEquipo(Long idEquipo) {
+        return this.equipoMapper.equipoDao(this.equipoRepository.findById(idEquipo).orElse(null));
+    }
+
+    @Override
+    public List<EquipoDto> listadoPorIdUsuarioAsignado(Long idUsuarioAsignado) {
+        return this.equipoMapper.listadoDto(this.equipoRepository.listadoEquiposPorId(idUsuarioAsignado));
+    }
+
+    @Override
+    public List<EquipoDto> listadoEntreFechaDeFabricacion(Integer fechaIni, Integer fechaFin) {
+        return this.equipoMapper.listadoDto(this.equipoRepository.listadoPorFechaDeFabricacion(fechaIni, fechaFin));
     }
 }

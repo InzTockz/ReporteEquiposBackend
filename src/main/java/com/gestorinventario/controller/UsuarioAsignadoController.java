@@ -24,6 +24,11 @@ public class UsuarioAsignadoController {
         return ResponseEntity.status(HttpStatus.OK).body(this.usuarioAsignadoService.listado());
     }
 
+    @GetMapping("/listadoPorDisponibilidad")
+    public ResponseEntity<List<UsuarioAsignadoDto>> listadoPorDisponibilidad(){
+        return ResponseEntity.status(HttpStatus.OK).body(this.usuarioAsignadoService.listadoPorDisponibilidad());
+    }
+
     @PostMapping("/registrar")
     public ResponseEntity<UsuarioAsignadoDto> registrar(@RequestBody UsuarioAsignadoDto usuarioAsignadoDto){
         return ResponseEntity.status(HttpStatus.CREATED).body(this.usuarioAsignadoService.registrar(usuarioAsignadoDto));

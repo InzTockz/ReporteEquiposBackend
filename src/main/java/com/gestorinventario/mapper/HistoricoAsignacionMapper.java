@@ -1,6 +1,5 @@
 package com.gestorinventario.mapper;
 
-import com.gestorinventario.dto.historicoAsignacion.HistoricoAsignacionDto;
 import com.gestorinventario.dto.historicoAsignacion.HistoricoAsignacionListadoResponse;
 import com.gestorinventario.dto.historicoAsignacion.HistoricoAsignacionRequest;
 import com.gestorinventario.dto.historicoAsignacion.HistoricoAsignacionResponse;
@@ -35,6 +34,7 @@ public interface HistoricoAsignacionMapper {
     @Mapping(target = "fechaIngresoEquipo", source = "equipoEntity.fechaIngresoEquipo")
     @Mapping(target = "fechaFabricacionEquipo", source = "equipoEntity.fechaFabricacionEquipo")
     @Mapping(target = "idEquipo", source = "equipoEntity.idEquipo")
+    @Mapping(target = "nombreUsuarioAsignado", source = "usuarioAsignadoEntity.nombreUsuarioAsignado")
     HistoricoAsignacionListadoResponse listadoResponseDto(HistoricoAsignacionEntity historicoAsignacionEntity);
 
     @Mapping(target = "idUsuarioAsignado", source = "usuarioAsignadoEntity.idUsuarioAsignado")
@@ -43,7 +43,6 @@ public interface HistoricoAsignacionMapper {
 
     @Mapping(target = "usuarioAsignadoEntity.idUsuarioAsignado", source = "idUsuarioAsignado")
     @Mapping(target = "equipoEntity.idEquipo", source = "idEquipo")
-    @InheritInverseConfiguration
     HistoricoAsignacionEntity historiAsignacionEntity (HistoricoAsignacionRequest historicoAsignacionDto);
 
 }

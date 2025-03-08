@@ -1,6 +1,7 @@
 package com.gestorinventario.controller;
 
 import com.gestorinventario.dto.HistoricoEquipoDto;
+import com.gestorinventario.dto.historicoEquipo.HistoricoEquipoListadoResponse;
 import com.gestorinventario.services.HistoricoEquiposService;
 import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
@@ -21,7 +22,7 @@ public class HistoricoEquiposController {
     }
 
     @GetMapping("/listado")
-    public ResponseEntity<List<HistoricoEquipoDto>> listado(){
+    public ResponseEntity<List<HistoricoEquipoListadoResponse>> listado(){
         return ResponseEntity.status(HttpStatus.OK).body(this.historicoEquiposService.listado());
     }
 
@@ -42,7 +43,7 @@ public class HistoricoEquiposController {
     }
 
     @GetMapping("/listado/{idEquipo}")
-    public ResponseEntity<List<HistoricoEquipoDto>> listadoPorIdEquipo(@PathVariable Long idEquipo){
+    public ResponseEntity<List<HistoricoEquipoListadoResponse>> listadoPorIdEquipo(@PathVariable Long idEquipo){
         return ResponseEntity.status(HttpStatus.OK).body(this.historicoEquiposService.listadoPorIdEquipo(idEquipo));
     }
 

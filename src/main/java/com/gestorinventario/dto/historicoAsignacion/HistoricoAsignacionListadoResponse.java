@@ -12,5 +12,7 @@ public record HistoricoAsignacionListadoResponse (
         String tamanioMemoriaRam,
         LocalDate fechaIngresoEquipo,
         LocalDate fechaFabricacionEquipo,
-        Long idEquipo
+        Long idEquipo,
+        String nombreUsuarioAsignado,
+        LocalDate fechaHistorico
 ) { }

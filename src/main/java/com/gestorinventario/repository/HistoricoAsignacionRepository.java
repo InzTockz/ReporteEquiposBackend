@@ -1,10 +1,12 @@
 package com.gestorinventario.repository;
 
+import com.gestorinventario.entity.EquipoEntity;
 import com.gestorinventario.entity.HistoricoAsignacionEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface HistoricoAsignacionRepository extends JpaRepository<HistoricoAsignacionEntity, Long> {

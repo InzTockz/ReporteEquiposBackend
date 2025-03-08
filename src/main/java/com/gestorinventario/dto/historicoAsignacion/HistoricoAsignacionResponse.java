@@ -6,7 +6,5 @@ public record HistoricoAsignacionResponse (
         Long idHistorico,
         Long idUsuarioAsignado,
         Long idEquipo,
-        String detalleHistorico,
-        LocalDate fechaHistorico,
-        boolean estadoHistorico
+        String detalleHistorico
 ) { }
